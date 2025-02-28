@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 function HangmanCode() {
-	const hangmanCode = `import { useState, useRef, useEffect } from "react";
+	const hangmanCode = `import { useState, useRef, useEffect } from "react";\n
 import Button from "./Button";
 import { Link } from "react-router-dom";
 
@@ -276,9 +276,6 @@ function Hangman() {
 				</Link>
 				<div className="codebox">
 					<code>{hangmanCode}</code>
-					<br />
-					<br />
-					<p>...You'll want an IDE to help untangle this.</p>
 				</div>
 			</article>
 		</main>
