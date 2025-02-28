@@ -1,5 +1,12 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Footer from "./components/Footer";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Hangman from "./components/Hangman";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import HangmanCode from "./components/HangmanCode";
 
 function App() {
 	return (
