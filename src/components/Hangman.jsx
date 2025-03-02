@@ -49,22 +49,24 @@ function Hangman() {
 		message: "",
 	});
 
-	const hangmanAlert = (useRef < null) | (HTMLDivElement > null);
+	const hangmanAlert = useRef(null);
 
 	useEffect(() => {
-		hangmanAlert.current.innerHTML = `<p>${hangmanAlertInfo.message}</p>`;
-		if (hangmanAlertInfo.type === "empty") {
-			hangmanAlert.current.style.background = "rgba(0,0,0,0)";
-		} else if (hangmanAlertInfo.type === "success") {
-			hangmanAlert.current.style.background = "green";
-		} else {
-			hangmanAlert.current.style.background = "red";
-		}
+		if (hangmanAlert.current) {
+			hangmanAlert.current.innerHTML = `<p>${hangmanAlertInfo.message}</p>`;
+			if (hangmanAlertInfo.type === "empty") {
+				hangmanAlert.current.style.background = "rgba(0,0,0,0)";
+			} else if (hangmanAlertInfo.type === "success") {
+				hangmanAlert.current.style.background = "green";
+			} else {
+				hangmanAlert.current.style.background = "red";
+			}
 
-		if (hangmanAlertInfo.type != "empty") {
-			setTimeout(() => {
-				setHangmanAlertInfo({ type: "empty", message: "" });
-			}, 5000);
+			if (hangmanAlertInfo.type !== "empty") {
+				setTimeout(() => {
+					setHangmanAlertInfo({ type: "empty", message: "" });
+				}, 5000);
+			}
 		}
 	}, [hangmanAlertInfo]);
 

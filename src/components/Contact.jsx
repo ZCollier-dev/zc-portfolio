@@ -19,22 +19,24 @@ function Contact() {
 		alertMessage: "",
 	});
 
-	const alertElement = (useRef < null) | (HTMLDivElement > null);
+	const alertElement = useRef(null);
 
 	useEffect(() => {
-		alertElement.current.innerHTML = `<p>${alertInfo.alertMessage}</p>`;
-		if (alertInfo.type === "empty") {
-			alertElement.current.style.background = "rgba(0,0,0,0)";
-		} else if (alertInfo.type === "success") {
-			alertElement.current.style.background = "green";
-		} else {
-			alertElement.current.style.background = "red";
-		}
+		if (alertElement.current) {
+			alertElement.current.innerHTML = `<p>${alertInfo.alertMessage}</p>`;
+			if (alertInfo.type === "empty") {
+				alertElement.current.style.background = "rgba(0,0,0,0)";
+			} else if (alertInfo.type === "success") {
+				alertElement.current.style.background = "green";
+			} else {
+				alertElement.current.style.background = "red";
+			}
 
-		if (alertInfo.type != "empty") {
-			setTimeout(() => {
-				setAlertInfo({ type: "empty", alertMessage: "" });
-			}, 5000);
+			if (alertInfo.type != "empty") {
+				setTimeout(() => {
+					setAlertInfo({ type: "empty", alertMessage: "" });
+				}, 5000);
+			}
 		}
 	}, [alertInfo]);
 
