@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
 import Layout from "./components/Layout";
@@ -11,17 +11,15 @@ import HangmanCode from "./components/HangmanCode";
 function App() {
 	return (
 		<>
-			<HashRouter>
-				<Routes>
-					<Route path="/" element={<Layout />}>
-						<Route index element={<Home />} />
-						<Route path="/hangman" element={<Hangman />} />
-						<Route path="/about" element={<About />} />
-						<Route path="/contact" element={<Contact />} />
-						<Route path="/hangman-code" element={<HangmanCode />} />
-					</Route>
-				</Routes>
-			</HashRouter>
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<Home />} />
+					<Route path="/hangman" element={<Hangman />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/hangman-code" element={<HangmanCode />} />
+				</Route>
+			</Routes>
 			<Footer />
 		</>
 	);
