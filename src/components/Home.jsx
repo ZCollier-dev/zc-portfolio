@@ -2,9 +2,9 @@ import circuitTree from "/circuit-tree.svg";
 import githubImg from "../assets/PortfolioPics/github-logo.svg";
 import linkedinImg from "../assets/PortfolioPics/linkedin-logo.png";
 
-import ProgrammingLangCard from "../components/ProgrammingLangCard";
-import ProjectCard from "../components/ProjectCard";
-import ProjectCardButtons from "../components/ProjectCardButtons";
+import ProgrammingLangCard from "./ProgrammingLangCard";
+import ProjectCard from "./ProjectCard";
+import ProjectCardButtons from "./ProjectCardButtons";
 
 function Home() {
 	return (

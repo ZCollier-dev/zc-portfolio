@@ -19,16 +19,16 @@ function Contact() {
 		alertMessage: "",
 	});
 
-	const alertElement = useRef<null | HTMLDivElement>(null);
+	const alertElement = (useRef < null) | (HTMLDivElement > null);
 
 	useEffect(() => {
-		alertElement.current!.innerHTML = `<p>${alertInfo.alertMessage}</p>`;
+		alertElement.current.innerHTML = `<p>${alertInfo.alertMessage}</p>`;
 		if (alertInfo.type === "empty") {
-			alertElement.current!.style.background = "rgba(0,0,0,0)";
+			alertElement.current.style.background = "rgba(0,0,0,0)";
 		} else if (alertInfo.type === "success") {
-			alertElement.current!.style.background = "green";
+			alertElement.current.style.background = "green";
 		} else {
-			alertElement.current!.style.background = "red";
+			alertElement.current.style.background = "red";
 		}
 
 		if (alertInfo.type != "empty") {
@@ -38,15 +38,15 @@ function Contact() {
 		}
 	}, [alertInfo]);
 
-	const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleChangeInput = (e) => {
 		setToSend({ ...toSend, [e.target.name]: e.target.value });
 	};
 
-	const handleChangeTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+	const handleChangeTextarea = (e) => {
 		setToSend({ ...toSend, [e.target.name]: e.target.value });
 	};
 
-	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const onSubmit = (e) => {
 		e.preventDefault();
 		send("service_y1amfoj", "template_l5wc3yb", toSend, "TyhAq8dr8vfw_DyMj")
 			.then((response) => {

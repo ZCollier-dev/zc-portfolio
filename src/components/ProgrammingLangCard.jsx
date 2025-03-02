@@ -10,7 +10,7 @@ import ExpressLogo from "../assets/PortfolioPics/express-js-logo.png";
 import JavaLogo from "../assets/PortfolioPics/java-logo.png";
 import PostgresLogo from "../assets/PortfolioPics/postgresql-logo.png";
 
-function ProgrammingLangCard(props: { name: string }) {
+function ProgrammingLangCard(props) {
 	switch (props.name) {
 		case "Python":
 			return (
