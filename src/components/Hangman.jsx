@@ -11,7 +11,7 @@ import Hangman3 from "../assets/HangmanPics/hangman-3.png";
 import Hangman4 from "../assets/HangmanPics/hangman-4.png";
 import Hangman5 from "../assets/HangmanPics/hangman-5.png";
 
-function Letters(props: { letter: string }) {
+function Letters(props) {
 	return <div className="letterbox">{props.letter}</div>;
 }
 
@@ -49,16 +49,16 @@ function Hangman() {
 		message: "",
 	});
 
-	const hangmanAlert = useRef<null | HTMLDivElement>(null);
+	const hangmanAlert = (useRef < null) | (HTMLDivElement > null);
 
 	useEffect(() => {
-		hangmanAlert.current!.innerHTML = `<p>${hangmanAlertInfo.message}</p>`;
+		hangmanAlert.current.innerHTML = `<p>${hangmanAlertInfo.message}</p>`;
 		if (hangmanAlertInfo.type === "empty") {
-			hangmanAlert.current!.style.background = "rgba(0,0,0,0)";
+			hangmanAlert.current.style.background = "rgba(0,0,0,0)";
 		} else if (hangmanAlertInfo.type === "success") {
-			hangmanAlert.current!.style.background = "green";
+			hangmanAlert.current.style.background = "green";
 		} else {
-			hangmanAlert.current!.style.background = "red";
+			hangmanAlert.current.style.background = "red";
 		}
 
 		if (hangmanAlertInfo.type != "empty") {
@@ -70,9 +70,9 @@ function Hangman() {
 
 	const [hangmanState, setHangmanState] = useState(0);
 
-	const [wordState, setWordState] = useState<string[]>([]);
+	const [wordState, setWordState] = useState([]);
 
-	const [letterArray, setLetterArray] = useState<string[]>([]);
+	const [letterArray, setLetterArray] = useState([]);
 
 	useEffect(() => {
 		// Resets word
@@ -86,17 +86,17 @@ function Hangman() {
 		}
 	}, [currentWord]);
 
-	const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+	const [guessedLetters, setGuessedLetters] = useState([]);
 
 	const [currentLetter, setCurrentLetter] = useState("");
 
 	const [disableState, setDisableState] = useState(false);
 
-	const handleLetterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleLetterChange = (e) => {
 		setCurrentLetter(e.target.value.toUpperCase());
 	};
 
-	const handleLetterSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const handleLetterSubmit = (e) => {
 		e.preventDefault();
 		const validCharacters = /[A-Z]/g;
 		if (validCharacters.test(currentLetter)) {
@@ -168,7 +168,7 @@ function Hangman() {
 		}
 	}, [wordState]);
 
-	const handleReset = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const handleReset = (e) => {
 		e.preventDefault();
 		setCurrentWord("");
 		setHangmanState(0);

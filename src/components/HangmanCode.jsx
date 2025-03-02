@@ -1,7 +1,7 @@
 import "../styles/CodeBox.css";
 import circuitTree from "/circuit-tree.svg";
 
-import Button from "../components/Button";
+import Button from "./Button";
 import { Link } from "react-router-dom";
 
 function HangmanCode() {
