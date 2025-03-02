@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
 import Layout from "./components/Layout";
@@ -11,7 +11,7 @@ import HangmanCode from "./components/HangmanCode";
 function App() {
 	return (
 		<>
-			<BrowserRouter>
+			<HashRouter>
 				<Routes>
 					<Route path="/" element={<Layout />}>
 						<Route index element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
 						<Route path="/hangman-code" element={<HangmanCode />} />
 					</Route>
 				</Routes>
-			</BrowserRouter>
+			</HashRouter>
 			<Footer />
 		</>
 	);
