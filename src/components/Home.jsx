@@ -61,10 +61,6 @@ function Home() {
 							tryLink="/hangman"
 							codeLink="/hangman-code"
 						/>
-						<ProjectCard
-							title="Portfolio - TS -> JS Compatibility Update"
-							description="This portfolio was originally written in TypeScript for a final assignment for Keyin College and was converted to JS after compatibility issues arose with Github Pages."
-						/>
 					</div>
 				</div>
 			</article>
